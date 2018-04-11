@@ -10,7 +10,7 @@ class Model_Composant extends CI_Model{
         $this->db->insert("composant", $data); 
     }
     
-    public function unCode($code) {
+    public function getComposantById($code) {
         $this->db->where('CMP_CODE',$code);
         $query = $this->db->get('composant');
         return $query->result();

@@ -18,9 +18,11 @@
         <h1> GSB </h1>
     </head>
     <body>
-          <h1> Gestion des médicaments </h1>
+          <h1> Gestion des composants </h1>
           <input id="btnListerComposant" class="btn btn-primary" type="button" value="Voir la liste des composants" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Composant/afficherComposants'"/>
           <input id="btnAjouterComposant" class="btn btn-primary" type="button" value="Ajouter un composant" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Composant/ajouterComposant'"/>
           <input id="btnModifierComposant" class="btn btn-primary" type="button" value="Modifier un composant" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Composant/modifierComposant'"/>
+          <h1> Gestion des composants d'un médicament</h1>
+          <input id="btnListerComposantDeMedoc" class="btn btn-primary" type="button" value="Liste des composants d'un médicament" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Composant/afficherComposants'"/>
     </body>
 </html>
