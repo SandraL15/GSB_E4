@@ -1,7 +1,7 @@
 
 <html>
     <head>
-        <title> Gestions des medicaments </title>
+        <title> Gestions des composants </title>
         <h1> Gestion des composants  <a class="btn btn-primary" href='<?php echo base_url(); ?>'>Retourner à l'accueil</a></h1>
         
         <!-- Latest compiled and minified CSS -->
