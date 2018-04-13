@@ -25,25 +25,13 @@ function InsererMedocCom()
         url:"insererComposantMedoc",
         data:"medicament="+$('#hidden_id_meds').val()+"&composant="+$('#hidden_id_comps').val()+"&quantite="+$('#CST_QTE').val(),
         success:function(data)
-        { swal(
-                'Le composant a été ajouté!',
-                'Vous pouvez ajouter un autre!',
-                'success',{timer: 3000}
-              );
-
+        {
            $('#MedComps').empty();
             $('#MedComps').append(data);
         },
         error:function()
         {
-       swal({
-                title: 'Ce composant est deja dans la liste!',
-                text: "Choisissez un autre",
-                dangerMode: true,
-                type: 'warning',
-                showCancelButton: true,
-                timer: 3000
-              });
+            alert("ca marche pas");
         }
     }
     );

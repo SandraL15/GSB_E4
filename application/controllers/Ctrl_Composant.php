@@ -72,8 +72,8 @@ class Ctrl_Composant extends CI_Controller {
 //        }
           
         public function ajouterComposantMeds(){
-              $this->load->model("Model_Medicament");
-           $this->load->model("Model_Composant");
+            $this->load->model("Model_Medicament");
+            $this->load->model("Model_Composant");
             $data['lesMedicaments'] = $this->Model_Medicament->getAllMedicament();
             $data['lesComposants'] = $this->Model_Composant->getAllComposants();
             $this->load->view('v_AjoutCompoMedoc',$data);
