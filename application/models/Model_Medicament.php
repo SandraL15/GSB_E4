@@ -24,4 +24,5 @@ class Model_Medicament extends CI_Model{
         $this->db->query("UPDATE constituer SET `CST_QTE` = '".$CST_QTE."' WHERE constituer.`MED_DEPOTLEGAL` = '".$medicament."' AND `constituer`.`CMP_CODE` = '".$composant."'");
     }
     
+    
 }       

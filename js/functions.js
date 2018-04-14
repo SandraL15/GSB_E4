@@ -17,3 +17,22 @@ function InsererMedocCom()
     }
     );
 }
+function AfficherComposantMeds(idMedicament)
+{
+    $.ajax(
+    {
+        type:"get",
+        url:"afficherComposantMeds",
+        data:"idMedicament="+idMedicament,
+        success:function(data)
+        {
+           $('#divComps').empty();
+            $('#divComps').append(data);
+        },
+        error:function()
+        {
+            alert('Erreur SQL');
+        }
+    }
+    );
+}

@@ -21,4 +21,5 @@ class Model_Composant extends CI_Model{
     $this->db->query("UPDATE `composant` SET `CMP_LIBELLE`='".$libelle."' WHERE `composant`.`CMP_CODE` = '".$hidden_id."'");
   
     }   
+    
 }

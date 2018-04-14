@@ -18,7 +18,7 @@ class Ctrl_Composant extends CI_Controller {
         public function form_composant(){
           if($this->form_validation->run()==true)
           {
-              $this->ajouterComposant();
+            $this->ajouterComposant();
           }
           else{
               $this->load->model("Model_Composant");
@@ -26,7 +26,6 @@ class Ctrl_Composant extends CI_Controller {
                   'CMP_CODE' =>$this->input->post('CMP_CODE'),
                   'CMP_LIBELLE' =>$this->input->post('CMP_LIBELLE'),
                       );
-
               $this->Model_Composant->insertComposants($data);
               $this->ajouterComposant();
           }  
@@ -45,14 +44,12 @@ class Ctrl_Composant extends CI_Controller {
          public function modifierComposantMod(){
         $this->load->model("Model_Composant");
         $data["lesComposants"] = $this->Model_Composant->getAllComposants();
-
         $data = array( 
                       'hidden_id'    => $this->input->post('hidden_id'),
                       'CMP_LIBELLE'    => $this->input->post('CMP_LIBELLE')
                         ); 
                       $hidden_id = $data['hidden_id'];
                       $libelle = $data['CMP_LIBELLE'];
-        
         $this->Model_Composant->modifierComposant($hidden_id,$libelle);
         $this->modifierComposant();
         }
@@ -72,14 +69,24 @@ class Ctrl_Composant extends CI_Controller {
             $this->load->view('v_AjoutCompoMedoc',$data);
         }
   
-         public function insererComposantMedoc(){
+        public function insererComposantMedoc(){
             $medicament = $_POST['medicament'];
             $composant = $_POST['composant'];
             $CST_QTE = $_POST['quantite'];
             $this->Model_Medicament->insertMedocComposants($medicament,$composant,$CST_QTE);
             $this->ajouterComposantMeds();
         }
-               
+        public function afficherMedicaments(){
+           $this->load->model("Model_Medicament");
+           $data['lesMedicaments'] =$this->Model_Medicament->getAllMedicament();   
+           $this->load->view('v_CompoMedoc',$data);
+        }
+        public function afficherComposantMeds(){
+            $this->load->model("Model_Medicament");
+            $idMedicament = $_GET['idMedicament'];   
+            $data["lesComposantDeMedicaments"] = $this->Model_Medicament->getComposantMeds($idMedicament);
+            $this->load->view('v_CompsMeds',$data);
+        }      
         public function statistique(){
            $this->load->model("Model_Stats");
            $data['lesQteMedCom'] = $this->Model_Stats->getQteComposantsDunMedicament(); 

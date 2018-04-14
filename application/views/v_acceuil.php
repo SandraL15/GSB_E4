@@ -24,6 +24,8 @@
           <input id="btnModifierComposant" class="btn btn-primary" type="button" value="Modifier un composant" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Composant/modifierComposant'"/>
           <h3>Gestion des composants d'un médicament</h3>
           <input id="btnListerComposantDeMedoc" class="btn btn-primary" type="button" value="Liste des composants d'un médicament" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Composant/ajouterComposantMeds'"/>
+          <input id="btnStats" class="btn btn-primary" type="button" value="Liste des composants" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Composant/afficherMedicaments'"/>
+
           <h3>Statistiques</h3>
           <input id="btnStats" class="btn btn-primary" type="button" value="Voir les statistiques" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Composant/statistique'"/>
     </body>
