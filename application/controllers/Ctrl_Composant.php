@@ -95,5 +95,16 @@ class Ctrl_Composant extends CI_Controller {
            $data['lenbrMed'] = $this->Model_Stats->getNbrMedoc();
            $this->load->view("v_statistique", $data);
        }
+        public function modifierComposantMedoc(){
+            $data['lesMedicaments'] =$this->Model_Medicament->getAllMedicament();
+            $this->load->view('v_modCompoMedoc',$data);
+        }
+        public function modifierComposantMedic(){
+            $medicament = $_POST['medicament'];
+            $composant = $_POST['composant'];
+            $CST_QTE = $_POST['quantite'];
+            $this->Model_Medicament->modifierMedocComposants($medicament,$composant,$CST_QTE);
+            $this->ajouterComposantMeds();
+        }
 
 }

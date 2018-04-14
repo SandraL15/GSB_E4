@@ -1,7 +1,7 @@
 <table class='table'>
-                <tr class="info">
+                <tr>
                     <th class="thLC">
-                        Libelle d'un composant 
+                        Libelle du composant 
                     </th>
                     <th class="thLC">
                         CST Quantité 

@@ -15,37 +15,45 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
          <script type="text/javascript">
+             
          $(
                   function(){
- 
+;
                       $('#idMeds').click(
                               function(){
                                  $('.bg-info').show();
                                       
                               });
-                      $('#idMeds').show(
-                         function(){
-                             $('#hidden_id_meds').val(($(this).val()));
+                     $('#idMeds').show(                         
+                             function(){
+                                $('#hidden_id_meds').val(($(this).val()));
+                             ComposantMed();
                          });
                          $('#idMeds').change(
                          function(){
-                             $('#hidden_id_meds').val(($(this).val()));
+                            $('#hidden_id_meds').val(($(this).val()));
+                             ComposantMed();
                          });
                          
-                         $('#selComp').show(
-                         function(){
-                             $('#hidden_id_comps').val(($(this).val()));
-                         });
                          $('#selComp').change(
                          function(){
                              $('#hidden_id_comps').val(($(this).val()));
+                             QuantiteMedCom();
                          });
-                         $('#InsererMedCom').click(
+                         $('#btnValidCom').click(
                          function(){
-                           InsererMedocCom();
+                           ModifMedCom();
                             
                          });
-
+                         
+                        $('#idMeds').show(
+                        function(){
+                            AfficherComposantMeds($(this).val());
+                        });
+                         $('#idMeds').change(
+                         function(){
+                             AfficherComposantMeds($(this).val());
+                         });
                          
                       
    
@@ -53,12 +61,10 @@
         </script>
     </head>
         <body>
- <section>
-    <div class="container">
-        <div id="MedComps">
-        <h2>Ajout de composants pour un medicament</h2>
-        <a class="btn btn-primary" href='<?php echo base_url(); ?>'>Retourner à l'accueil</a>
 
+    <div class="container">
+        <div id="Aj">
+        <h2>Modifier les composants d'un medicament</h2>
         <hr>
             <h3>Choisissez un medicament</h3>
        
@@ -72,31 +78,31 @@
             </select>
              <input type="hidden" name="hidden " id="hidden_id_meds" >
             <input type="hidden" name="hidden " id="hidden_id_comps" >
-       <div>
-           <div>
-
-                
+           <div class="col-md-6">        
             <br>
             <div id='idComps'>
-                <h3>Choisissez un composant</h3>
+                <h3>Choisissez les composants</h3>
+                <div id="chComps">
                         <select id="selComp" class="form-control">
                         <?php 
                                 foreach ($lesComposants as $comps){
                                     echo "<option value='".$comps->CMP_CODE."'>".$comps->CMP_LIBELLE."</option>";
                                 }
                             ?>
-                        </select><br>
-            <h3>CST Quantité</h3><input class="form-control" type="text" id="CST_QTE">
+                        </select>
+                </div><br>
+                <h3>Modifier la quantité</h3>
+                        <label>CST Quantité</label><div id="inpQte"><input class="form-control" type="text" id="CST_QTE"></div>
             </div>
-            <input id="InsererMedCom" class="btn btn-info" type="button" value="Ajouter" style="margin-top: 20px;"><br>
+            <input id="btnValidCom" class="btn btn-success" type="button"  value="Modifier" style="margin-top: 20px;"><br>
         </div>
-         
+          
        </div>
             
-   
+    
         </div> 
     
     </div>
-</section>
+
     </body>
 </html>

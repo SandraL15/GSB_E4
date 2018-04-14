@@ -20,7 +20,7 @@ class Model_Medicament extends CI_Model{
         return $sql->result();
     }
     
-    public function modifierMedicComposants($medicament,$composant,$CST_QTE){
+    public function modifierMedocComposants($medicament,$composant,$CST_QTE){
         $this->db->query("UPDATE constituer SET `CST_QTE` = '".$CST_QTE."' WHERE constituer.`MED_DEPOTLEGAL` = '".$medicament."' AND `constituer`.`CMP_CODE` = '".$composant."'");
     }
     
