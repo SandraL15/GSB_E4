@@ -96,15 +96,68 @@ class Ctrl_Composant extends CI_Controller {
            $this->load->view("v_statistique", $data);
        }
         public function modifierComposantMedoc(){
-            $data['lesMedicaments'] =$this->Model_Medicament->getAllMedicament();
-            $this->load->view('v_modCompoMedoc',$data);
+           $this->load->model("Model_Medicament");
+           $data['lesMedicaments'] =$this->Model_Medicament->getAllMedicament();
+           $this->load->view('v_modCompoMedoc',$data);
         }
-        public function modifierComposantMedic(){
+        public function ModModifierComposantMedoc(){
             $medicament = $_POST['medicament'];
             $composant = $_POST['composant'];
             $CST_QTE = $_POST['quantite'];
             $this->Model_Medicament->modifierMedocComposants($medicament,$composant,$CST_QTE);
             $this->ajouterComposantMeds();
         }
-
+        public function quantiteComposantMedoc(){
+           $composant = $_POST['composant'];
+           $medicament = $_POST['medicament'];
+           $data["lesQuantitéCDM"] = $this->Model_Medicament->getQuantitéComposantMeds($medicament,$composant);
+           $this->load->view('v_QteCompo',$data);
+       }
+       public function composantMedoc(){
+            $medicament = $_POST['medicament'];
+            $data["lesComposants"] = $this->Model_Medicament->getComposantMeds($medicament);
+            $this->load->view('v_ComposantAjouter',$data);
+        }
+        public function modifComposantMedoc(){
+            $medicament = $_POST['medicament'];
+            $composant = $_POST['composant'];
+            $CST_QTE = $_POST['quantite'];
+            $this->Model_Medicament->modifierMedocComposants($medicament,$composant,$CST_QTE);
+            $this->modifierComposantMedoc();
+       }
+        public function formulationMed(){
+           $this->load->model("Model_Presentation");
+           $this->load->model("Model_Medicament");
+           $data["lesPresentations"] = $this->Model_Presentation->GetAllPresentations();
+           $data['lesMedicaments'] =$this->Model_Medicament->getAllMedicament();
+           $this->load->view("v_FormulationMedoc",$data);
+       }
+        public function AjouteFormulationMedoc(){
+           $medicament = $_POST['idMedicament'];
+           $presentation = $_POST['idPresentation'];
+           $this->Model_Presentation->insererPresentation($medicament,$presentation);
+           $this->formulationMed();   
+       }
+        public function ajouterPresentation(){
+           $this->load->model("Model_Presentation");
+           $data["lesPresentations"] = $this->Model_Presentation->GetAllPresentations();
+           $this->load->view("v_AjoutPresentation",$data);
+       }
+       
+        public function form_presentation(){
+          
+          if($this->form_validation->run()==true)
+          {
+            $this->ajouterPresentation();
+          }
+          else{
+              $this->load->model("Model_Presentation");
+              $data=array(
+                  'PRE_CODE' =>$this->input->post('PRE_CODE'),
+                  'PRE_LIBELLE' =>$this->input->post('PRE_LIBELLE'),
+                      );
+              $this->Model_Presentation->insertPresentation($data);
+              $this->ajouterPresentation();
+          }  
+        }
 }

@@ -78,7 +78,7 @@
             </select>
              <input type="hidden" name="hidden " id="hidden_id_meds" >
             <input type="hidden" name="hidden " id="hidden_id_comps" >
-           <div class="col-md-6">        
+           <div>        
             <br>
             <div id='idComps'>
                 <h3>Choisissez les composants</h3>
@@ -94,15 +94,11 @@
                 <h3>Modifier la quantité</h3>
                         <label>CST Quantité</label><div id="inpQte"><input class="form-control" type="text" id="CST_QTE"></div>
             </div>
-            <input id="btnValidCom" class="btn btn-success" type="button"  value="Modifier" style="margin-top: 20px;"><br>
+            <input id="btnValidCom" class="btn btn-info" type="button"  value="Modifier" style="margin-top: 20px;"><br>
         </div>
           
        </div>
             
-    
-        </div> 
-    
-    </div>
+     </div>
 
-    </body>
 </html>
