@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Gestion des composants des medicaments</title>
-        <a class="btn btn-primary" href='<?php echo base_url(); ?>'>Retourner à l'accueil</a>
+        <h1 style=" text-align: center; "> Gestion des composants d'un medicament <a class="btn btn-primary" href='<?php echo base_url(); ?>'>Retourner à l'accueil</a></h1>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                <!-- Latest compiled and minified CSS -->
@@ -64,7 +64,7 @@
 
     <div class="container">
         <div id="Aj">
-        <h2>Modifier les composants d'un medicament</h2>
+        <h2 style="text-align: center;">Modifier les composants d'un medicament</h2>
         <hr>
             <h3>Choisissez un medicament</h3>
        

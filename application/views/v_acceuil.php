@@ -19,11 +19,11 @@
     </head>
     <body>
           <h3>Gestion des composants</h3>
-          <input id="btnListerComposant" class="btn btn-primary" type="button" value="Voir la liste des composants" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Composant/afficherComposants'"/>
+          <input id="btnListerComposant" class="btn btn-primary" type="button" value="Liste des composants" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Composant/afficherComposants'"/>
           <input id="btnAjouterComposant" class="btn btn-primary" type="button" value="Ajouter un composant" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Composant/ajouterComposant'"/>
           <input id="btnModifierComposant" class="btn btn-primary" type="button" value="Modifier un composant" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Composant/modifierComposant'"/>
           <h3>Gestion des composants d'un médicament</h3>
-          <input id="btnListeComposantDunMedoc" class="btn btn-primary" type="button" value="Liste des composants" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Composant/afficherMedicaments'"/>
+          <input id="btnListeComposantDunMedoc" class="btn btn-primary" type="button" value="Liste des composants d'un médicament" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Composant/afficherMedicaments'"/>
           <input id="btnAjoutCompoMedoc" class="btn btn-primary" type="button" value="Ajouter des composants à un médicament" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Composant/ajouterComposantMeds'"/>
           <input id="btnModifierComposantDunMedoc" class="btn btn-primary" type="button" value="Modifier les composants des medicaments" onclick="location.href='<?php echo base_url(); ?>index.php/Ctrl_Composant/modifierComposantMedoc'"/>
           <h3>Gestion des présentations</h3>

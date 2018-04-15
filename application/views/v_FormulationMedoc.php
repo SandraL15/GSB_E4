@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Gestion des formulations</title>
-        <a class="btn btn-primary" href='<?php echo base_url(); ?>'>Retourner à l'accueil</a>
+    <h1 style="text-align: center;">Gestion des presentations <a class="btn btn-primary" href='<?php echo base_url(); ?>'>Retourner à l'accueil</a></h1>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                <!-- Latest compiled and minified CSS -->
@@ -29,7 +29,7 @@
     <body>
         <div class="container">
             <div id="AJ">
-            <h2 >Inserer la presentation d'un medicament</h2>
+            <h2 style="text-align: center;">Ajouter une presentation à un medicament</h2>
                 <hr>
                 <div class="row">
                     <div class="col-md-6">

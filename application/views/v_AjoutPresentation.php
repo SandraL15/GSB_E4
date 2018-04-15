@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Gestion des presentations</title>
-        <h1> Gestion des presentations  <a class="btn btn-primary" href='<?php echo base_url(); ?>'>Retourner à l'accueil</a></h1>
+        <h1 style="text-align: center;">Gestion des presentations <a class="btn btn-primary" href='<?php echo base_url(); ?>'>Retourner à l'accueil</a></h1>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                                 <!-- Latest compiled and minified CSS -->
@@ -16,7 +16,7 @@
     </head>
      <body>
             <?php echo form_open('Ctrl_Composant/form_presentation');  ?>
-            <h4><b>Veuillez saisir les informations de la présentation</b></h4>
+            <h3 style="text-align: center;">Veuillez saisir les informations de la présentation</h3>
             <br><label>Code: </label><input type="text" name="PRE_CODE" />
             <br><label>Libelle: </label><input type="text" name="PRE_LIBELLE" />
 
