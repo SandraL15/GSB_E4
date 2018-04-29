@@ -33,7 +33,7 @@
           ?>
         ]);
         var options = {
-          title: 'Quantite de composants par medicament ',
+          title: 'Quantité de composants par medicament ',
           pieHole: 0.4,
           pieSliceText: 'value',
         };
@@ -63,7 +63,7 @@
                          role: "annotation" },
                        2]);
       var options = {
-        title: "Somme de composant d'un medicament",
+        title: "Somme des composants des medicaments",
         width: 600,
         height: 400,
         bar: {groupWidth: "95%"},
@@ -87,7 +87,7 @@
           ?>
         ]);
         var options = {
-          title: 'Quantite de medicament d\'une presentation',
+          title: 'Quantité de medicament d\'une presentation',
           pieHole: 0.4,
           pieSliceText: 'value',
         };

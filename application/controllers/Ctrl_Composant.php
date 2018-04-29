@@ -73,7 +73,6 @@ class Ctrl_Composant extends CI_Controller {
             $medicament = $_POST['medicament'];
             $composant = $_POST['composant'];
             $CST_QTE = $_POST['quantite'];
-            // Tu as oublié de charger le model
             $this->load->model("Model_Medicament");
             
             $this->Model_Medicament->insertMedocComposants($medicament,$composant,$CST_QTE);
@@ -100,23 +99,29 @@ class Ctrl_Composant extends CI_Controller {
        }
         public function modifierComposantMedoc(){
            $this->load->model("Model_Medicament");
+           $this->load->model("Model_Composant");
            $data['lesMedicaments'] =$this->Model_Medicament->getAllMedicament();
+           $data['lesComposants'] =$this->Model_Composant->getAllComposants();
            $this->load->view('v_modCompoMedoc',$data);
         }
         public function ModModifierComposantMedoc(){
             $medicament = $_POST['medicament'];
             $composant = $_POST['composant'];
             $CST_QTE = $_POST['quantite'];
+            $this->load->model("Model_Medicament");
+            $this->load->model("Model_Composant");
             $this->Model_Medicament->modifierMedocComposants($medicament,$composant,$CST_QTE);
-            $this->ajouterComposantMeds();
+            $this->modifierComposantMedoc();
         }
         public function quantiteComposantMedoc(){
+           $this->load->model("Model_Medicament");
            $composant = $_POST['composant'];
            $medicament = $_POST['medicament'];
            $data["lesQuantitéCDM"] = $this->Model_Medicament->getQuantitéComposantMeds($medicament,$composant);
            $this->load->view('v_QteCompo',$data);
        }
        public function composantMedoc(){
+            $this->load->model("Model_Medicament");
             $medicament = $_POST['medicament'];
             $data["lesComposants"] = $this->Model_Medicament->getComposantMeds($medicament);
             $this->load->view('v_ComposantAjouter',$data);
@@ -125,6 +130,8 @@ class Ctrl_Composant extends CI_Controller {
             $medicament = $_POST['medicament'];
             $composant = $_POST['composant'];
             $CST_QTE = $_POST['quantite'];
+            $this->load->model("Model_Medicament");
+            $this->load->model("Model_Composant");
             $this->Model_Medicament->modifierMedocComposants($medicament,$composant,$CST_QTE);
             $this->modifierComposantMedoc();
        }
@@ -136,6 +143,8 @@ class Ctrl_Composant extends CI_Controller {
            $this->load->view("v_FormulationMedoc",$data);
        }
         public function AjouteFormulationMedoc(){
+           $this->load->model("Model_Presentation");
+           $this->load->model("Model_Medicament");
            $medicament = $_POST['idMedicament'];
            $presentation = $_POST['idPresentation'];
            $this->Model_Presentation->insererPresentation($medicament,$presentation);
