@@ -73,6 +73,9 @@ class Ctrl_Composant extends CI_Controller {
             $medicament = $_POST['medicament'];
             $composant = $_POST['composant'];
             $CST_QTE = $_POST['quantite'];
+            // Tu as oublié de charger le model
+            $this->load->model("Model_Medicament");
+            
             $this->Model_Medicament->insertMedocComposants($medicament,$composant,$CST_QTE);
             $this->ajouterComposantMeds();
         }

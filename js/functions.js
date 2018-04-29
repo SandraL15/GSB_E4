@@ -1,5 +1,7 @@
 function InsererMedocCom()
 {
+    alert("MEDOC = "+$('#hidden_id_meds').val());
+    alert("COMP = "+$('#hidden_id_comps').val());
     $.ajax(
     {
         type:"post",

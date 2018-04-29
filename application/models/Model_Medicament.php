@@ -7,8 +7,8 @@ class Model_Medicament extends CI_Model{
         return $sql->result();
     }
      public function insertMedocComposants($medicament,$composant,$CST_QTE){
-         var_dump($CST_QTE);die;
-         $this->db->query("INSERT INTO `constituer` (`MED_DEPOTLEGAL`, `CMP_CODE`, `CST_QTE`) VALUES ('".$medicament."','".$composant."','".$CST_QTE."')");
+
+         $this->db->query("INSERT INTO constituer VALUES('".$medicament."','".$composant."',".$CST_QTE.")");
     }
     public function getComposantMeds($MED_NOMCOMMERCIAL){
         $sql = $this->db->query("SELECT * FROM  constituer, composant where constituer.CMP_CODE=composant.CMP_CODE AND MED_DEPOTLEGAL='".$MED_NOMCOMMERCIAL."'");
